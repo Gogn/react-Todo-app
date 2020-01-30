@@ -1,19 +1,39 @@
 import React, {Component} from 'react'
 
-export default class Todos extends Component {
+export default class Todo extends Component {
 
-
-
+  styles = () => {
+    return {
+      textDecoration: this.props.todo.done ? 'line-through' : 'none'
+    }
+  }
 
   render() {
     return (
-      <div>
-        <ul>
-          {this.props.todos.map((todo) => (
-            <li key={todo.id}>{todo.name}</li>
-          ))}
-        </ul>
-      </div>
+      <li className="list-group-item">
+        <div style={this.styles()}>
+          <div className="input-group">
+          <div className="input-group-prepend">
+            <div className="input-group-text">
+              <input
+                type="checkbox"
+                checked={this.props.todo.done}
+                onClick={() => this.props.doneTodo(this.props.todo.id)}
+              />
+            </div>
+          </div>
+            <span
+              type="text"
+              className="form-control"
+              onClick={() => this.props.doneTodo(this.props.todo.id)} >{this.props.todo.name}
+            </span>
+            <button
+              className='btn btn-danger'
+              onClick={() => this.props.deleteTodo(this.props.todo.id)}
+            >X</button>
+          </div>
+        </div>
+      </li>
     )
   }
 }
