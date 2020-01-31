@@ -46,7 +46,7 @@ export default class Todos extends Component {
       <>
         <div className='row'>
           <div className="col text-center">
-            <h1 className='mb-4'>Список задач</h1>
+            <h1 className='mb-4'>Todo list</h1>
           </div>
         </div>
 
@@ -70,7 +70,7 @@ export default class Todos extends Component {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Опишите задачу"
+                placeholder="Describe what you want to do"
                 onChange={this.addTodoHandler}
               />
               <div className="input-group-append">
@@ -78,7 +78,7 @@ export default class Todos extends Component {
                   className="btn btn-outline-success"
                   type="submit"
                   onChange={this.addTodo}
-                >Добавить задачу
+                >Add todo
                 </button>
               </div>
             </div>

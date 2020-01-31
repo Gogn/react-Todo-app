@@ -5,14 +5,14 @@ export const Navbar = () => (
   <nav className='navbar navbar-dark bg-primary navbar-expand-lg'>
     <div className="navbar-brand">
       <img src='/favicon.ico' width="30" alt="React app" className='d-inline-block align-top mr-3' />
-      Todo app. Классическая версия.
+      Todo app. Local state version.
     </div>
-    <ul className='navbar-nav'>
+    <ul className='navbar-nav ml-auto'>
       <li className='nav-item'>
-        <NavLink exact to="/" className='nav-link'>Главная</NavLink>
+        <strong><NavLink exact to="/" className='nav-link'>Home</NavLink></strong>
       </li>
       <li>
-        <NavLink to="/todo" className='nav-link'>Todo</NavLink>
+        <strong><NavLink to="/todo" className='nav-link'>Todos</NavLink></strong>
       </li>
     </ul>
   </nav>
