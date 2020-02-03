@@ -1,4 +1,4 @@
-<h2>This is react app example that using just local state to store data.</h5>
+<h2>This is an example of a React app that uses only a local state to store the data.</h5>
 <h5>Demo: https://gogn.github.io/react-Todo-app/</h5>
           <h4>How it works?</h4>
           <details>
