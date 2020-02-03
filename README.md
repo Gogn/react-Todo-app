@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h1>Local state version</h1>
+  
+  <h3>How it works</h3>
+  <article>
+            <p>First of all, the main page is <strong>index.html</strong>. They have a div id=”root” </p>
+            <p>A rendered JSX from <strong>index.js</strong> will be inserted to this block. <strong>index.js</strong> includes code from <strong>App.js</strong> component.</p>
+            <p><strong>App.js</strong> uses <i>react-router-dom</i> that uses <i>React Router</i> to bind DOM.</p>
+            <p><i>React Router</i> dynamically render component <strong>pages/Home</strong> where you are now. <i>(so the entire app doesn't reloading  when a link is opens, only necessary elements refreshing)</i></p>
+            <p><strong>Home.js</strong> component uses <strong>components/navbar.js</strong> to add navigation bar on the top of the app.</p>
+            <p>The <strong>pages/Todos.js</strong> component placed on the /todo path, that can be reached by clicking to the link on the top right corner on navbar.</p>
+            <hr/>
 
-## Available Scripts
+            <h5>The Local state</h5>
+            <p><strong>Todos.js</strong> have a <i>local state</i> that have a array of objects.</p>
+            <p><strong>Todos.js</strong> include list of todos from <strong>components/todo.js</strong> by mapping state.todos: 'this.state.todos.map((todo, id) => ( ... )',
+              so every todo object from state.todos array will be shown from <strong>components/todo.js </strong>
+              with parameters: 'todo={todo}, key={id}, doneTodo={this.doneTodo}, deleteTodo={event => this.deleteTodo(id)}'</p>
+            <ul>
+              <li><i>todo</i> - is the current state.todos[] object from <i>map</i> method</li>
+              <li><i>key</i> - is necessary parameter for the <i>map</i> method</li>
+              <li><i>doneTodo</i> - is the function for update state.todos.done parameter</li>
+              <li><i>deleteTodo</i> - is the function to delete todo object from state.todos array</li>
+            </ul>
+            <p>So when you clicking on the todo element or delete button the <strong>components/todo.js</strong>
+              calling function from props and action from <strong>pages/Todos.js</strong> is triggered</p>
+            <p><strong>pages/Todos.js</strong> also have the input that triggered <i>addTodo</i> function that update state.todos.todoNew.
+              After state.todos.todoNew was updated, new todo can be stored by clicking on "Add todo" button, that triggered <i>addTodo</i> function and update the state.</p>
+            <hr/>
 
-In the project directory, you can run:
+            <h5>Manegement state via Redux</h5>
+            The Redux implementation of this app placed here: https://github.com/Gogn/react-Todo-app_Redux
+            <hr/>
+            
+            <h5>Use hooks</h5>
+            Version that uses Hooks state management app placed here:
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+          </article>
